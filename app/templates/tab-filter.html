@@ -1,0 +1,37 @@
+<ion-view view-title="Filter">
+  <ion-content class="padding">
+    <h3>Filter</h3>
+    <form name="frm" ng-submit="submit(filter)" novalidate>
+      <div class="list">
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">Sol</span>
+          <input type="number" name="sol" placeholder="i.e. 1000" ng-model="filter.sol" required>
+          <span ng-show="frm.sol.$dirty && frm.sol.$error.required">*Sol is required</span>
+          <span ng-show="frm.sol.$dirty && frm.sol.$error.number">*Not a number</span>
+        </label>
+        <label class="item item-input item-select">
+          <div class="input-label">
+            Camera
+          </div>
+          <select name="camera" ng-model="filter.camera" required>
+            <option value="FHAZ" selected>Front Hazard Avoidance Camera</option>
+            <option value="RHAZ">Rear Hazard Avoidance Camera</option>
+            <option value="MAST">Mast Camera</option>
+            <option value="CHEMCAM">Chemistry And Camera Complex</option>
+            <option value="MAHLI">Mars Hand Lens Imager</option>
+            <option value="MARDI">Mars Descent Imager</option>
+            <option value="NAVCAM">Navigation Camera</option>
+            <option value="PANCAM">Panoramic Camera</option>
+            <option value="MINITES">Miniature Thermal Emission Spectrometer (Mini-TES)</option>
+          </select>
+        </label>
+        <!-- <button class="button button-block button-positive" ng-click="submit(filter)">
+          Done
+        </button> -->
+        <div class="padding">
+          <button ng-disabled="frm.$invalid" type="submit" class="button button-block button-positive" name="button">Done</button>
+        </div>
+      </div>
+    </form>
+  </ion-content>
+</ion-view>

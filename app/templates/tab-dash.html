@@ -1,0 +1,39 @@
+<ion-view view-title="Home">
+  <ion-content class="padding" >
+
+    <ion-list>
+
+       <ion-item collection-repeat="photoItem in items" item-width="100%"
+    item-height="120%">
+        <div class="list card">
+          <div class="item item-avatar">
+            <h2>Rover: {{photoItem.rover.name}}</h2>
+            <p>Sol: {{photoItem.sol}}</p>
+            <p>Earth Date: {{photoItem.earth_date}}</p><span> ID: {{photoItem.id}}</span>
+          </div>
+          <div class="item item-body">
+            <img ng-src="{{photoItem.img_src}}" class="full-image" alt="" />
+          </div>
+        </div>
+
+      </ion-item>
+    </ion-list>
+   <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>
+   <!-- <ion-infinite-scroll ng-if="!noMoreItemsAvailable" on-infinite="filterPhotos()" distance="10%"></ion-infinite-scroll> -->
+  </ion-content>
+</ion-view>
+
+<!-- <ion-view view-title="Home">
+  <ion-content class="padding">
+    <div class="list card" ng-repeat="photoItem in mars.photos">
+      <div class="item item-avatar">
+        <h2>Rover: {{photoItem.rover.name}}</h2>
+        <p>Sol: {{photoItem.sol}}</p>
+        <p>Earth Date: {{photoItem.earth_date}}</p>
+      </div>
+      <div class="item item-body">
+        <img ng-src="{{photoItem.img_src}}" class="full-image" alt="" />
+      </div>
+    </div>
+  </ion-content>
+</ion-view> -->
