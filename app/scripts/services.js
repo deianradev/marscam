@@ -23,11 +23,10 @@ angular.module('starter.services', ['config'])
 
         return $http.get(ENV.apiEndpoint, config)
           .then(function(res) {
-            console.log(res.data.photos, ' page: ', config.params)
               return res.data
             })
       }
-      
+
         return mars;
       })
     .factory('Chats', function() {
